@@ -50,6 +50,7 @@ function Header() {
                     <rect y="7" width="24" height="2" fill="white" />
                     <rect y="14" width="24" height="2" fill="white" />
                   </svg>
+                  <span className="sr-only">Open menu</span>
                 </button>
               </Menubar.Trigger>
               <Menubar.Portal>

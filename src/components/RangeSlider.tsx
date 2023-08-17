@@ -16,7 +16,10 @@ function RangeSlider({ label, ...props }: Props) {
         <Slider.Track className="relative h-[0.875rem] grow rounded-full bg-white">
           <Slider.Range className="absolute h-full rounded-full bg-[#FF8049B0]" />
         </Slider.Track>
-        <Slider.Thumb className="flex aspect-square w-[1.3125rem] items-center justify-center rounded-full bg-[#FF8049]">
+        <Slider.Thumb
+          aria-label={label}
+          className="flex aspect-square w-[1.3125rem] items-center justify-center rounded-full bg-[#FF8049]"
+        >
           <div className="aspect-square w-[0.6875rem] rounded-full bg-white"></div>
         </Slider.Thumb>
       </Slider.Root>
