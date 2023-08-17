@@ -1,3 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+@layer components {
+    .btn {
+        @apply transition-all inline-block bg-[#FF8049] drop-shadow-button text-white text-[1.125rem] font-[900] leading-[180%] hover:bg-[#F2733D];
+    }
+
+    .footer-heading {
+        @apply text-[#40434A] text-[1.25rem] font-[700] leading-[180%];
+    }
+
+    .footer-item {
+        @apply text-[#70737C] text-[1.25rem] font-[400] leading-[180%];
+    }
+
+    .social-icon-wrapper {
+        @apply transition-all flex items-center justify-center bg-[#FF8049] rounded-full w-[3.125rem] aspect-square text-white hover:bg-[#F2733D];
+    }
+}
