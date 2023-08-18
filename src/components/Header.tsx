@@ -11,6 +11,10 @@ const navigationItems = [
     name: 'Services',
     url: '#services',
   },
+  {
+    name: 'Cats',
+    url: '/cats',
+  },
 ];
 
 function Header() {
