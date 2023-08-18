@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import React, { useEffect, useState } from 'react';
 import { axiosClient } from '../libs/axiosClient';
 
 export interface Breed {
@@ -41,19 +40,23 @@ const sortOptions = [
     value: 'ascend',
   },
 ];
-const Cats = () => {
-  const [sort, setSort] = useState(sortOptions[0].value);
-  const { data: cats, isLoading } = useQuery({
-    queryKey: ['cats'],
-    queryFn: async () => {
-      const res = await axiosClient.get<Cat[]>('/images/search', {
-        params: {
-          limit: 9,
-        },
-      });
-      return res.data;
+
+const loadCats = async () => {
+  const res = await axiosClient.get<Cat[]>('/images/search', {
+    params: {
+      limit: 9,
     },
   });
+  return res.data;
+};
+const Cats = () => {
+  const [cats, setCats] = useState<Cat[]>();
+
+  useEffect(() => {
+    loadCats()
+      .then((data) => setCats(data))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <main className="mx-auto w-full max-w-3xl">
